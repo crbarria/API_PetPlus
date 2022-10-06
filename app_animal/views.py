@@ -62,10 +62,8 @@ class AnimalView(View):
             animal.color=jd['color'],
             animal.n_microchip=jd['n_microchip'],
             animal.raza=jd['raza'],
-            animal.dueno_id_dueno_id=jd['dueno_id_dueno_id'],
-            animal.ficha_veterinaria_id_ficha_id=jd['ficha_veterinaria_id_ficha_id']
             animal.save()
-            datos = {'mesage':"Succes"}
+            datos = {'mesage':"Success"}
         else:
             datos = {'message':"Animal not found"}
         return JsonResponse(datos)
