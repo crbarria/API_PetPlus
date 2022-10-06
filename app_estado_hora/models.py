@@ -9,3 +9,6 @@ class EstadoHora(models.Model):
     class Meta:
         managed = False
         db_table = 'estado_hora'
+    
+    def __str__(self):
+        return f'{self.estado}'

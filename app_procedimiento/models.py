@@ -11,3 +11,6 @@ class Procedimiento(models.Model):
     class Meta:
         managed = False
         db_table = 'procedimiento'
+
+    def __str__(self):
+        return f'{self.nombre_procedimiento}'

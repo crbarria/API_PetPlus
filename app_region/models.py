@@ -9,3 +9,6 @@ class Region(models.Model):
     class Meta:
         managed = False
         db_table = 'region'
+
+    def __str__(self):
+        return f'{self.nombre_region}'

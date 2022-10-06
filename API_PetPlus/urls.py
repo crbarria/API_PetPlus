@@ -22,10 +22,10 @@ urlpatterns = [
     path('app_comuna/',include('app_comuna.urls')),
     path('app_dueno/',include('app_dueno.urls')),
     path('app_emp/',include('app_emp.urls')),
-#     path('app_estado_hora/',include('app_estado_hora.urls')),
-#     path('app_ficha/',include('app_ficha.urls')),
-#     path('app_procedimiento/',include('app_procedimiento.urls')),
-#     path('app_region/',include('app_region.urls')),
-#     path('app_reserva/',include('app_reserva.urls')),
+    path('app_estado_hora/',include('app_estado_hora.urls')),
+    path('app_ficha/',include('app_ficha.urls')),
+    path('app_procedimiento/',include('app_procedimiento.urls')),
+    path('app_region/',include('app_region.urls')),
+    path('app_reserva/',include('app_reserva.urls')),
 #     path('app_veterinaria/',include('app_veterinaria.urls'))
 ]

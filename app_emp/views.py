@@ -27,7 +27,7 @@ class EmpView(View):
             if len(emps)>0:
                 datos={'message':"Success",'emps':emps}
             else:
-                datos={'message':"Comuunas no encontrados..."}
+                datos={'message':"Empleados no encontrados..."}
             return JsonResponse(datos)
 
 
