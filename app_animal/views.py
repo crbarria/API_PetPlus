@@ -4,6 +4,7 @@ from django.http.response import JsonResponse
 from django.utils.decorators import method_decorator
 from django.views import View
 from .models import Animal
+
 from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
@@ -53,7 +54,7 @@ class AnimalView(View):
         jd=json.loads(request.body)
         animales = list(Animal.objects.filter(id_animal=id_animal).values())
         if len(animales) > 0:
-            animal=Animal.objects.get()
+            animal=Animal.objects.get(id_animal=id_animal)
             animal.nombre=jd['nombre'],
             animal.sexo=jd['sexo'],
             animal.especie=jd['especie'],
@@ -67,7 +68,13 @@ class AnimalView(View):
             datos = {'mesage':"Succes"}
         else:
             datos = {'message':"Animal not found"}
-            return JsonResponse(datos)
+        return JsonResponse(datos)
 
-    def delete(self,request):
-        pass
+    def delete(self,request, id_animal):
+        animales = list(Animal.objects.filter(id_animal=id_animal).values())
+        if len(animales) > 0:
+            Animal.objects.filter(id_animal=id_animal).delete()
+            datos = {'message' : "succes"}
+        else:
+            datos = {'message' : "Animal no encontrado"}
+        return JsonResponse(datos)

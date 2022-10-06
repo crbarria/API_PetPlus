@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'app_animal',
     'app_comuna',
     'app_dueno',
@@ -47,7 +48,6 @@ INSTALLED_APPS = [
     'app_reserva',
     'app_procedimiento',
     'app_estado_hora'
-
 ]
 
 MIDDLEWARE = [
@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'API_PetPlus.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'vete1_bd',
+        'NAME': 'petplus_bd',
         'USER': 'root',
         'PASSWORD': 'lucas',
         'HOST': 'localhost',

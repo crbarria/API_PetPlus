@@ -8,6 +8,8 @@ class Veterinaria(models.Model):
     nombre_vet = models.CharField(max_length=45)
     direccion = models.CharField(max_length=250)
     especialidad = models.CharField(max_length=45)
+    telefono = models.CharField(max_length=45)
+    correo = models.CharField(max_length=45)
     urgencia = models.CharField(max_length=45, blank=True, null=True)
     exoticos = models.CharField(max_length=45, blank=True, null=True)
     odontologia = models.CharField(max_length=45, blank=True, null=True)
