@@ -10,3 +10,6 @@ class Comuna(models.Model):
     class Meta:
         managed = False
         db_table = 'comuna'
+
+    def __str__(self):
+        return f'{self.nombre_comuna}'

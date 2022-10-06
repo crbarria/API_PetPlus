@@ -10,3 +10,6 @@ class FichaVeterinaria(models.Model):
         managed = False
         db_table = 'ficha_veterinaria'
 
+    def __str__(self):
+        return f'{self.n_registro}'
+

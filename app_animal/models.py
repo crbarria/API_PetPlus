@@ -17,3 +17,6 @@ class Animal(models.Model):
     class Meta:
         managed = False
         db_table = 'animal'
+
+    def __str__(self):
+        return f'{self.nombre} | Dueño: {self.dueno_id_dueno} | Ficha N°: {self.ficha_veterinaria_id_ficha}'
