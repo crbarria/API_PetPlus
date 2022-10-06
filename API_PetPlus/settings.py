@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'app_emp',
     'app_region',
     'app_veterinaria',
-    'app_ficha',
     'app_reserva',
     'app_procedimiento',
     'app_estado_hora'

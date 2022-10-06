@@ -44,8 +44,7 @@ class AnimalView(View):
             color=jd['color'],
             n_microchip=jd['n_microchip'],
             raza=jd['raza'],
-            dueno_id_dueno_id=jd['dueno_id_dueno_id'],
-            ficha_veterinaria_id_ficha_id=jd['ficha_veterinaria_id_ficha_id']
+            dueno_id_dueno_id=jd['dueno_id_dueno_id']
             )
         datos={'message':"Success"}
         return JsonResponse(datos)
