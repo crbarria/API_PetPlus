@@ -13,19 +13,19 @@ class ReservaHorasView(View):
 
     def get(self,request,id_reserva_horas=0):
         if (id_reserva_horas>0):
-            reservas=list(ReservaHoras.objects.filter(id_reserva_horas=id_reserva_horas).values())
-            if len(reservas) > 0:
-                reserva=reservas[0]
-                datos={'message':"Success",'reservas':reserva}
+            reserva_horas=list(ReservaHoras.objects.filter(id_reserva_horas=id_reserva_horas).values())
+            if len(reserva_horas) > 0:
+                reserva_hora=reserva_horas[0]
+                datos={'message':"Success",'reserva_horas':reserva_hora}
             else:
-                datos={'message':"reservas no encontrados..."}
+                datos={'message':"reserva_horas no encontrados..."}
             return JsonResponse(datos)
         else:
-            reservas=list(ReservaHoras.objects.values())
-            if len(reservas)>0:
-                datos={'message':"Success",'reservas':reservas}
+            reserva_horas=list(ReservaHoras.objects.values())
+            if len(reserva_horas)>0:
+                datos={'message':"Success",'reserva_horas':reserva_horas}
             else:
-                datos={'message':"reservas no encontrados..."}
+                datos={'message':"reserva_horas no encontrados..."}
             return JsonResponse(datos)
 
 
@@ -46,25 +46,25 @@ class ReservaHorasView(View):
 
     def put(self,request,id_reserva_horas):
         jd=json.loads(request.body)
-        reservas = list(ReservaHoras.objects.filter(id_reserva_horas=id_reserva_horas).values())
-        if len(reservas) > 0:
-            reserva=ReservaHoras.objects.get(id_reserva_horas=id_reserva_horas)
-            reserva.horas=jd['horas'],
-            reserva.veterinaria_id_veterinaria=jd['veterinaria_id_veterinaria'],
-            reserva.estado_hora_id_estado_hora=jd['estado_hora_id_estado_hora']
-            reserva.save()
+        reserva_horas = list(ReservaHoras.objects.filter(id_reserva_horas=id_reserva_horas).values())
+        if len(reserva_horas) > 0:
+            reserva_hora=ReservaHoras.objects.get(id_reserva_horas=id_reserva_horas)
+            reserva_hora.horas=jd['horas'],
+            reserva_hora.veterinaria_id_veterinaria=jd['veterinaria_id_veterinaria'],
+            reserva_hora.estado_hora_id_estado_hora=jd['estado_hora_id_estado_hora']
+            reserva_hora.save()
             datos = {'mesage':"Succes"}
         else:
-            datos = {'message':"reserva not found"}
+            datos = {'message':"reserva_hora not found"}
         return JsonResponse(datos)
 
 
 
     def delete(self,request, id_reserva_horas):
-        reservas = list(ReservaHoras.objects.filter(id_reserva_horas=id_reserva_horas).values())
-        if len(reservas) > 0:
+        reserva_horas = list(ReservaHoras.objects.filter(id_reserva_horas=id_reserva_horas).values())
+        if len(reserva_horas) > 0:
             ReservaHoras.objects.filter(id_reserva_horas=id_reserva_horas).delete()
             datos = {'message' : "succes"}
         else:
-            datos = {'message' : "Reserva no encontrado"}
+            datos = {'message' : "reserva_hora no encontrado"}
         return JsonResponse(datos)

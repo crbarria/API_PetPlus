@@ -22,5 +22,5 @@ class Veterinaria(models.Model):
         db_table = 'veterinaria'
 
     def __str__(self):
-        return f'{self.nombre_vet}'    
+        return f'| Nombre: {self.nombre_vet}'    
 

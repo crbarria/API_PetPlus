@@ -46,7 +46,9 @@ INSTALLED_APPS = [
     'app_veterinaria',
     'app_reserva',
     'app_procedimiento',
-    'app_estado_hora'
+    'app_estado_hora',
+    'app_consulta_procedimiento',
+    'app_consulta_reserva'
 ]
 
 MIDDLEWARE = [

@@ -26,5 +26,7 @@ urlpatterns = [
     path('app_procedimiento/',include('app_procedimiento.urls')),
     path('app_region/',include('app_region.urls')),
     path('app_reserva/',include('app_reserva.urls')),
-    path('app_veterinaria/',include('app_veterinaria.urls'))
+    path('app_consulta_procedimiento/',include('app_consulta_procedimiento.urls')),
+    path('app_veterinaria/',include('app_veterinaria.urls')),
+    path('app_consulta_reserva/',include('app_consulta_reserva.urls'))
 ]
