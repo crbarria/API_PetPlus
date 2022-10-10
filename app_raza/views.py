@@ -24,7 +24,7 @@ class RazaView(View):
             return JsonResponse(datos)
         else:
             razas=list(Raza.objects.values())
-            if len(raza)>0:
+            if len(razas)>0:
                 datos={'message':"Success",'razas':razas}
             else:
                 datos={'message':"raza no encontrados..."}

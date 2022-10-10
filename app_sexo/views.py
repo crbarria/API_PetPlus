@@ -24,7 +24,7 @@ class SexoView(View):
             return JsonResponse(datos)
         else:
             sexos=list(Sexo.objects.values())
-            if len(sexo)>0:
+            if len(sexos)>0:
                 datos={'message':"Success",'sexos':sexos}
             else:
                 datos={'message':"sexos no encontrados..."}

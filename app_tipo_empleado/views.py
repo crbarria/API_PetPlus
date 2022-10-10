@@ -22,7 +22,7 @@ class TipoEmpView(View):
             return JsonResponse(datos)
         else:
             tipoemps=list(TipoEmp.objects.values())
-            if len(tipoemp)>0:
+            if len(tipoemps)>0:
                 datos={'message':"Success",'tipoemps':tipoemps}
             else:
                 datos={'message':"tipoemp no encontrados..."}

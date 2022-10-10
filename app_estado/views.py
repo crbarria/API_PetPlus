@@ -23,7 +23,7 @@ class EstadoView(View):
             return JsonResponse(datos)
         else:
             estados=list(Estado.objects.values())
-            if len(estado)>0:
+            if len(estados)>0:
                 datos={'message':"Success",'estados':estados}
             else:
                 datos={'message':"estados no encontrados..."}

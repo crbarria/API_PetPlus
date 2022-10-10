@@ -24,7 +24,7 @@ class ColorView(View):
             return JsonResponse(datos)
         else:
             colores=list(Color.objects.values())
-            if len(color)>0:
+            if len(colores)>0:
                 datos={'message':"Success",'colores':colores}
             else:
                 datos={'message':"color no encontrados..."}

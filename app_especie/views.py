@@ -11,11 +11,9 @@ class EspecieView(View):
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
-
-
     def get(self,request,id_especie=0):
         if (id_especie>0):
-            especiees=list(Especie.objects.filter(id_especie=id_especie).values())
+            especies=list(Especie.objects.filter(id_especie=id_especie).values())
             if len(especies) > 0:
                 especie=especies[0]
                 datos={'message':"Success",'especies':especie}
@@ -24,7 +22,7 @@ class EspecieView(View):
             return JsonResponse(datos)
         else:
             especies=list(Especie.objects.values())
-            if len(especie)>0:
+            if len(especies)>0:
                 datos={'message':"Success",'especies':especies}
             else:
                 datos={'message':"especie no encontrados..."}
