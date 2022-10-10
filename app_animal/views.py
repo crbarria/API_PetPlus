@@ -38,13 +38,12 @@ class AnimalView(View):
         #print(jd)
         Animal.objects.create(
             nombre=jd['nombre'],
-            sexo=jd['sexo'],
-            especie=jd['especie'],
-            altura=jd['altura'],
-            color=jd['color'],
             n_microchip=jd['n_microchip'],
-            raza=jd['raza'],
-            dueno_id_dueno_id=jd['dueno_id_dueno_id']
+            dueno_id_dueno_id=jd['dueno_id_dueno'],
+            color_id_color=jd['color_id_color'],
+            especie_id_especie=jd['especie_id_especie'],
+            estado_id_estado=jd['estado_id_estado'],
+            sexo_id_sexo=jd['sexo_id_sexo'],
             )
         datos={'message':"Success"}
         return JsonResponse(datos)
@@ -54,13 +53,13 @@ class AnimalView(View):
         animales = list(Animal.objects.filter(id_animal=id_animal).values())
         if len(animales) > 0:
             animal=Animal.objects.get(id_animal=id_animal)
-            animal.nombre=jd['nombre'],
-            animal.sexo=jd['sexo'],
-            animal.especie=jd['especie'],
-            animal.altura=jd['altura'],
-            animal.color=jd['color'],
-            animal.n_microchip=jd['n_microchip'],
-            animal.raza=jd['raza'],
+            animal.nombre=jd['nombre']
+            animal.n_microchip=jd['n_microchip']
+            animal.dueno_id_dueno_id=jd['dueno_id_dueno']
+            animal.color_id_color=jd['color_id_color']
+            animal.especie_id_especie=jd['especie_id_especie']
+            animal.estado_id_estado=jd['estado_id_estado']
+            animal.sexo_id_sexo=jd['sexo_id_sexo']
             animal.save()
             datos = {'mesage':"Success"}
         else:

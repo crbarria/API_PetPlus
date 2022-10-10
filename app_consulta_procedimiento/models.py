@@ -15,4 +15,4 @@ class ConsultaProcedimiento(models.Model):
         db_table = "consulta_procedimiento"
     
     def __str__(self):
-        return f' N°: {self.id_consulta_procedimiento} | Fecha: {self.consulta_reserva_id_consulta_reserva} | Dogtor: {self.emp_id_emp}'
+        return f'{self.consulta_reserva_id_consulta_reserva}'

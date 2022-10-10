@@ -39,15 +39,10 @@ class VeterinariaView(View):
         Veterinaria.objects.create(
             nombre_vet=jd['nombre_vet'],
             direccion=jd['direccion'],
-            especialidad=jd['especialidad'],
             telefono=jd['telefono'],
             correo=jd['correo'],
-            urgencia=jd['urgencia'],
-            exoticos=jd['exoticos'],
-            odontologia=jd['odontologia'],
-            toma_muestras=jd['toma_muestras'],
-            examenes=jd['examenes'],
             comuna_id_comuna=jd['comuna_id_comuna'],
+            descripcion=jd['descripcion']
             )
         datos={'message':"Success"}
         return JsonResponse(datos)
@@ -57,17 +52,12 @@ class VeterinariaView(View):
         veterinarias = list(Veterinaria.objects.filter(id_veterinaria=id_veterinaria).values())
         if len(veterinarias) > 0:
             veterinaria=Veterinaria.objects.get(id_veterinaria=id_veterinaria)
-            veterinaria.nombre_vet=jd['nombre_vet'],
-            veterinaria.direccion=jd['direccion'],
-            veterinaria.especialidad=jd['especialidad'],
-            veterinaria.telefono=jd['telefono'],
-            veterinaria.correo=jd['correo'],
-            veterinaria.urgencia=jd['urgencia'],
-            veterinaria.exoticos=jd['exoticos'],
-            veterinaria.odontologia=jd['odontologia'],
-            veterinaria.toma_muestras=jd['toma_muestras'],
-            veterinaria.examenes=jd['examenes'],
-            veterinaria.comuna_id_comuna=jd['comuna_id_comuna'],
+            veterinaria.nombre_vet=jd['nombre_vet']
+            veterinaria.direccion=jd['direccion']
+            veterinaria.telefono=jd['telefono']
+            veterinaria.correo=jd['correo']
+            veterinaria.comuna_id_comuna=jd['comuna_id_comuna']
+            veterinaria.descripcion=jd['descripcion'],
             veterinaria.save()
             datos = {'mesage':"Success"}
         else:

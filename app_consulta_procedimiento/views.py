@@ -49,10 +49,10 @@ class ConsultaProcedimientoView(View):
         consulta_procedimientos = list(ConsultaProcedimiento.objects.filter(id_consulta_procedimiento=id_consulta_procedimiento).values())
         if len(consulta_procedimientos) > 0:
             consulta_procedimiento=ConsultaProcedimiento.objects.get(id_consulta_procedimiento=id_consulta_procedimiento)
-            consulta_procedimiento.observaciones=jd['observaciones'],
-            consulta_procedimiento.emp_id_emp=jd['emp_id_emp'],
-            consulta_procedimiento.procedimiento_id_procedimiento=jd['procedimiento_id_procedimiento'],
-            consulta_procedimiento.id_consulta_consulta_reserva=jd['consulta_reserva_id_consulta_reserva'],
+            consulta_procedimiento.observaciones=jd['observaciones']
+            consulta_procedimiento.emp_id_emp=jd['emp_id_emp']
+            consulta_procedimiento.procedimiento_id_procedimiento=jd['procedimiento_id_procedimiento']
+            consulta_procedimiento.id_consulta_consulta_reserva=jd['consulta_reserva_id_consulta_reserva']
             consulta_procedimiento.save()
             datos = {'message':"Success"}
         else:

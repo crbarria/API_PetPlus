@@ -34,8 +34,7 @@ class ProcedimientoView(View):
             #print(jd)
             Procedimiento.objects.create(
                 nombre_procedimiento=jd['nombre_procedimiento'],
-                dias = jd['dias'],
-                dosis = jd['dosis'],
+                descripcion = jd['descripcion'],
                 )
             datos={'message':"Success"}
             return JsonResponse(datos)
@@ -45,9 +44,8 @@ class ProcedimientoView(View):
             procedimientos = list(Procedimiento.objects.filter(id_procedimiento=id_procedimiento).values())
             if len(procedimientos) > 0:
                 procedimiento=Procedimiento.objects.get(id_procedimiento=id_procedimiento)
-                procedimiento.nombre_procedimientos=jd['procedimiento'],
-                procedimiento.dias=jd['dias'],
-                procedimiento.dosis=jd['dosis'],
+                procedimiento.nombre_procedimiento=jd['nombre_procedimiento']
+                procedimiento.descripcion=jd['descripcion']
                 procedimiento.save()
                 datos = {'mesage':"Succes"}
             else:

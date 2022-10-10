@@ -4,7 +4,7 @@ from django.db import models
 
 class EstadoHora(models.Model):
     id_estado_hora = models.AutoField(primary_key=True)
-    estado = models.CharField(max_length=45)
+    estado = models.CharField(max_length=8)
 
     class Meta:
         managed = False

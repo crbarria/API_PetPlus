@@ -25,7 +25,7 @@ class ConsultaReservaView(View):
                 consulta_reserva=consulta_reservas[0]
                 datos={'message':"Success",'reserva':consulta_reserva}
             else:
-                datos={'message':"reserva no encontrados..."}
+                datos={'message':"consulta_reserva no encontrados..."}
             return JsonResponse(datos)
         else:
             consulta_reservas=list(ConsultaReserva.objects.values())
@@ -36,9 +36,7 @@ class ConsultaReservaView(View):
             return JsonResponse(datos)
     
     def post(self, request):
-        #print(request.body)
         jd=json.loads(request.body)
-        #print(jd)
         ConsultaReserva.objects.create(
             fecha=jd['fecha'],
             motivo_consulta=jd['motivo_consulta'],
@@ -54,14 +52,13 @@ class ConsultaReservaView(View):
         consulta_reservas = list(ConsultaReserva.objects.filter(id_consulta_reserva=id_consulta_reserva).values())
         if len(consulta_reservas) > 0:
             consulta_reserva=ConsultaReserva.objects.get(id_consulta_reserva=id_consulta_reserva)
-            consulta_reserva.fecha=jd['fecha'],
-            consulta_reserva.motivo_consulta=jd['motivo_consulta'],
-            consulta_reserva.peso=jd['peso'],
-            consulta_reserva.reserva_horas_id_horas=jd['reserva_horas_id_reserva_horas'],
+            consulta_reserva.fecha=jd['fecha']
+            consulta_reserva.motivo_consulta=jd['motivo_consulta']
+            consulta_reserva.peso=jd['peso']
             consulta_reserva.save()
             datos = {'mesage':"Success"}
         else:
-            datos = {'message':"reserva not found"}
+            datos = {'message':"consulta_reserva not found"}
         return JsonResponse(datos)
 
     def delete(self,request, id_consulta_reserva):
@@ -70,5 +67,5 @@ class ConsultaReservaView(View):
             ConsultaReserva.objects.filter(id_consulta_reserva=id_consulta_reserva).delete()
             datos = {'message' : "succes"}
         else:
-            datos = {'message' : "reserva no encontrado"}
+            datos = {'message' : "consulta_reserva no encontrado"}
         return JsonResponse(datos) 

@@ -49,9 +49,8 @@ class ReservaHorasView(View):
         reserva_horas = list(ReservaHoras.objects.filter(id_reserva_horas=id_reserva_horas).values())
         if len(reserva_horas) > 0:
             reserva_hora=ReservaHoras.objects.get(id_reserva_horas=id_reserva_horas)
-            reserva_hora.horas=jd['horas'],
-            reserva_hora.veterinaria_id_veterinaria=jd['veterinaria_id_veterinaria'],
-            reserva_hora.estado_hora_id_estado_hora=jd['estado_hora_id_estado_hora']
+            reserva_hora.horas=jd['horas']
+            reserva_hora.veterinaria_id_veterinaria=jd['veterinaria_id_veterinaria']
             reserva_hora.save()
             datos = {'mesage':"Succes"}
         else:

@@ -49,9 +49,9 @@ class DuenoView(View):
         duenos = list(Dueno.objects.filter(id_dueno=id_dueno).values())
         if len(duenos) > 0:
             dueno=Dueno.objects.get(id_dueno=id_dueno)
-            dueno.nombre_completo=jd['nombre_completo'],
-            dueno.telefono=jd['telefono'],
-            dueno.correo=jd['correo'],
+            dueno.nombre_completo=jd['nombre_completo']
+            dueno.telefono=jd['telefono']
+            dueno.correo=jd['correo']
             dueno.save()
             datos = {'mesage':"Succes"}
         else:

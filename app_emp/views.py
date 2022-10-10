@@ -31,18 +31,17 @@ class EmpView(View):
             return JsonResponse(datos)
 
 
-
     def post(self, request):
         #print(request.body)
         jd=json.loads(request.body)
         #print(jd)
         Emp.objects.create(
             nombre_empleado=jd['nombre_empleado'],
-            tipo_emp=jd['tipo_emp'],        
+            tipo_emp=jd['tipo_emp'],     
+            veterinaria_id_veterinaria=jd['veterinaria_id_veterinaria'],   
             )
         datos={'message':"Success"}
         return JsonResponse(datos)
-
 
 
     def put(self,request,id_emp):
@@ -50,15 +49,14 @@ class EmpView(View):
         emps = list(Emp.objects.filter(id_emp=id_emp).values())
         if len(emps) > 0:
             emp=Emp.objects.get(id_emp=id_emp)
-            emp.nombre_empleado=jd['nombre_empleado'],
+            emp.nombre_empleado=jd['nombre_empleado']
             emp.tipo_emp=jd['tipo_emp']
+            emp.veterinaria_id_veterinaria=jd['veterinaria_id_veterinaria']
             emp.save()
             datos = {'mesage':"Succes"}
         else:
             datos = {'message':"emp not found"}
         return JsonResponse(datos)
-
-
 
 
     def delete(self,request, id_emp):

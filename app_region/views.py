@@ -49,7 +49,7 @@ class RegionView(View):
         regiones = list(Region.objects.filter(id_region=id_region).values())
         if len(regiones) > 0:
             region=Region.objects.get(id_region=id_region)
-            region.nombre_region=jd['nombre_region'],
+            region.nombre_region=jd['nombre_region']
             region.save()
             datos = {'mesage':"Succes"}
         else:

@@ -45,7 +45,7 @@ class EstadoHoraView(View):
         estados = list(EstadoHora.objects.filter(id_estado_hora=id_estado_hora).values())
         if len(estados) > 0:
             estado=EstadoHora.objects.get(id_estado_hora=id_estado_hora)
-            estado.estado=jd['estado'],
+            estado.estado=jd['estado']
             estado.save()
             datos = {'mesage':"Succes"}
         else:

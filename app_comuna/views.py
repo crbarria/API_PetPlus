@@ -43,8 +43,8 @@ class ComunaView(View):
         comunas = list(Comuna.objects.filter(id_comuna=id_comuna).values())
         if len(comunas) > 0:
             comuna=Comuna.objects.get(id_comuna=id_comuna)
-            comuna.nombre_comuna=jd['nombre_comuna'],
-            comuna.region_id_region=jd['region_id_region'],
+            comuna.nombre_comuna=jd['nombre_comuna']
+            comuna.region_id_region=jd['region_id_region']
             comuna.save()
             datos = {'mesage':"Succes"}
         else:

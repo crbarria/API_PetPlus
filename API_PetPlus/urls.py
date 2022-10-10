@@ -28,5 +28,12 @@ urlpatterns = [
     path('app_reserva/',include('app_reserva.urls')),
     path('app_consulta_procedimiento/',include('app_consulta_procedimiento.urls')),
     path('app_veterinaria/',include('app_veterinaria.urls')),
-    path('app_consulta_reserva/',include('app_consulta_reserva.urls'))
+    path('app_consulta_reserva/',include('app_consulta_reserva.urls')),
+    path('app_color/',include('app_color.urls')),
+    path('app_especie/',include('app_especie.urls')),
+    path('app_raza/',include('app_raza.urls')),
+    path('app_sexo/',include('app_sexo.urls')),
+    path('app_tipo_empleado/',include('app_tipo_empleado.urls')),
+    path('app_estado/',include('app_estado.urls')),
+
 ]

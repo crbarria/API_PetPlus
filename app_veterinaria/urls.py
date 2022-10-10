@@ -3,5 +3,5 @@ from .views import VeterinariaView
 
 urlpatterns=[
     path('veterinaria/', VeterinariaView.as_view(), name='veterinarias'),
-    path('veterinaria/<int:id_veterinarial>', VeterinariaView.as_view(), name='veterinaria by id')
+    path('veterinaria/<int:id_veterinaria>', VeterinariaView.as_view(), name='veterinaria by id')
 ]
