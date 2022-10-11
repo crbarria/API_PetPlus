@@ -90,17 +90,20 @@ TEMPLATES = [
 WSGI_APPLICATION = 'API_PetPlus.wsgi.application'
 
 
-# Database
+# Databasem
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'petplus_bd',
-        'USER': 'root',
-        'PASSWORD': 'lucas',
-        'HOST': 'localhost',
+        'USER': 'tapia',
+        'PASSWORD': 'Tapia123*',
+        'HOST': 'petplus-instance.cbmrx3cdahjv.us-east-1.rds.amazonaws.com',
         'ROOT': 3306,
+        'OPTIONS': {
+            'sql_mode': 'traditional',
+        }
     }
 }
 
