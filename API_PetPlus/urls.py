@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 
 urlpatterns = [
+    path('', include('index.urls')),
     path('admin/', admin.site.urls),
     path('app_animal/',include('app_animal.urls')),
     path('app_comuna/',include('app_comuna.urls')),
@@ -35,5 +36,4 @@ urlpatterns = [
     path('app_sexo/',include('app_sexo.urls')),
     path('app_tipo_empleado/',include('app_tipo_empleado.urls')),
     path('app_estado/',include('app_estado.urls')),
-
 ]
