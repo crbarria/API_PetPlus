@@ -37,9 +37,9 @@ class ConsultaProcedimientoView(View):
         #print(jd)
         ConsultaProcedimiento.objects.create(
             observaciones=jd['observaciones'],
-            emp_id_emp=jd['emp_id_emp'],
-            procedimiento_id_procedimiento=jd['procedimiento_id_procedimiento'],
-            consulta_reserva_id_consulta_reserva=jd['consulta_reserva_id_consulta_reserva'],
+            emp_id_emp_id=jd['emp_id_emp_id'],
+            procedimiento_id_procedimiento_id=jd['procedimiento_id_procedimiento_id'],
+            consulta_reserva_id_consulta_reserva_id=jd['consulta_reserva_id_consulta_reserva_id'],
             )
         datos={'message':"Success"}
         return JsonResponse(datos)

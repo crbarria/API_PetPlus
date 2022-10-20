@@ -41,8 +41,8 @@ class ConsultaReservaView(View):
             fecha=jd['fecha'],
             motivo_consulta=jd['motivo_consulta'],
             peso=jd['peso'],
-            reserva_horas_id_reserva_horas=jd['reserva_horas_id_reserva_horas'],
-            animal_id_animal=jd['animal_id_animal']
+            reserva_horas_id_reserva_horas_id=jd['reserva_horas_id_reserva_horas_id'],
+            animal_id_animal_id=jd['animal_id_animal_id']
             )
         datos={'message':"Success"}
         return JsonResponse(datos)
